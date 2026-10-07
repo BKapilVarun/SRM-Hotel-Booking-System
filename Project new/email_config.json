@@ -1,0 +1,16 @@
+{
+  "smtp_enabled": true,
+  "smtp_provider": "gmail",
+  "smtp_server": "smtp.gmail.com",
+  "smtp_port": 465,
+  "use_ssl": true,
+  "sender_email": "srmhotel2022@gmail.com",
+  "sender_name": "THE SRM GRAND",
+  "sender_password": "ervx ucsx buko jvgg",
+  "sms_enabled": false,
+  "sms_provider": "fast2sms",
+  "fast2sms_api_key": "",
+  "twilio_sid": "",
+  "twilio_token": "",
+  "twilio_from": ""
+}

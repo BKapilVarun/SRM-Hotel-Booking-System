@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE SRM GRAND | Owner Management Portal</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        .owner-body {
+            background-color: #050811;
+            min-height: 100vh;
+        }
+        .login-wrap {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .login-card {
+            background: #0d1322;
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 440px;
+            padding: 3rem 2.5rem;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            position: relative;
+        }
+        .login-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-primary);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+        }
+        .login-title {
+            font-size: 1.4rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        .login-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        .owner-dashboard-view {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: none;
+        }
+        .owner-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+        .kpi-card {
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            backdrop-filter: blur(12px);
+            transition: var(--transition);
+        }
+        .kpi-card:hover {
+            border-color: var(--border-gold);
+            transform: translateY(-3px);
+        }
+        .kpi-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+        .kpi-icon.gold { background: rgba(212, 175, 55, 0.15); color: var(--gold-light); }
+        .kpi-icon.emerald { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+        .kpi-icon.blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+        .kpi-icon.purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+        .kpi-val {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: #ffffff;
+            font-family: var(--font-heading);
+        }
+        .kpi-label {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .admin-table-container {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            backdrop-filter: blur(16px);
+            overflow-x: auto;
+        }
+        .table-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .table-tabs {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .tbl-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            padding: 0.55rem 1.1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .tbl-btn:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .tbl-btn.active {
+            background: var(--gold-gradient);
+            color: #070a12;
+            border-color: transparent;
+        }
+        #btnTabSupabase.active {
+            background: #38bdf8 !important;
+            color: #050811 !important;
+            font-weight: 700 !important;
+        }
+        .excel-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        .excel-table th {
+            background: #0f172a;
+            color: var(--gold-light);
+            text-align: left;
+            padding: 0.9rem 1rem;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border-gold);
+            white-space: nowrap;
+        }
+        .excel-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            white-space: nowrap;
+        }
+        .excel-table tr:hover td {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        .badge-status {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            padding: 0.25rem 0.6rem;
+            border-radius: var(--radius-full);
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+        .ref-code {
+            font-family: monospace;
+            color: var(--gold-light);
+            background: rgba(212, 175, 55, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+        }
+        .status-selector {
+            background: #0f172a;
+            color: #f8fafc;
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-sm);
+            padding: 0.35rem 0.5rem;
+            font-size: 0.76rem;
+            outline: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+        }
+        .status-selector:focus {
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+        }
+        .track-link-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
+            text-decoration: none;
+            margin-left: 0.4rem;
+            vertical-align: middle;
+            transition: var(--transition);
+        }
+        .track-link-btn:hover {
+            background: var(--gold-primary);
+            color: #050811;
+        }
+        .settings-card {
+            background: rgba(11, 16, 29, 0.8);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .settings-section-title {
+            font-size: 1.15rem;
+            color: var(--gold-light);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .hint-box {
+            background: rgba(212, 175, 55, 0.08);
+            border-left: 3px solid var(--gold-primary);
+            padding: 0.85rem 1.25rem;
+            border-radius: 4px;
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+        .test-box {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px dashed var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 1rem 1.25rem;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body class="owner-body">
+
+    <!-- Ambient Glow -->
+    <div class="ambient-glow glow-top"></div>
+    <div class="ambient-glow glow-bottom"></div>
+
+    <!-- Top Navigation -->
+    <header class="luxury-navbar">
+        <div class="nav-container">
+            <a href="/" class="brand-logo" title="Back to Customer Portal">
+                <div class="logo-icon"><i class="fa-solid fa-crown"></i></div>
+                <div class="logo-text">
+                    <span class="brand-title">THE SRM GRAND</span>
+                    <span class="brand-subtitle">OWNER MANAGEMENT SUITE</span>
+                </div>
+            </a>
+            <div class="nav-actions">
+                <a href="/" class="glass-button" style="padding: 0.5rem 1rem; font-size: 0.82rem;">
+                    <i class="fa-solid fa-arrow-left"></i> Customer Portal
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 1: AUTHENTICATION LOGIN FORM (Visible when logged out) -->
+    <div class="login-wrap" id="loginWrap">
+        <div class="login-card">
+            <div class="login-icon">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <h2 class="login-title">Owner Authentication</h2>
+            <p class="login-subtitle">
+                Access to hotel room bookings and culinary databases is strictly restricted to property owners.
+            </p>
+
+            <form id="ownerLoginForm" onsubmit="handleOwnerLogin(event)">
+                <div class="form-group" style="text-align: left; margin-bottom: 1.25rem;">
+                    <label><i class="fa-solid fa-user"></i> Management Username</label>
+                    <input type="text" id="ownerUser" class="luxury-input" placeholder="admin" required autofocus>
+                </div>
+                <div class="form-group" style="text-align: left; margin-bottom: 1.75rem;">
+                    <label><i class="fa-solid fa-lock"></i> Security Password</label>
+                    <input type="password" id="ownerPass" class="luxury-input" placeholder="••••••••••••" required>
+                </div>
+                <button type="submit" class="gold-button full-width" id="loginSubmitBtn">
+                    <i class="fa-solid fa-key"></i> Authenticate & Enter
+                </button>
+                <p id="loginErrorMsg" style="color: #ef4444; font-size: 0.82rem; margin-top: 1rem; display: none;"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- SECTION 2: PROTECTED OWNER DASHBOARD (Visible only when authenticated) -->
+    <main class="owner-dashboard-view" id="dashboardWrap">
+        <div class="owner-topbar">
+            <div>
+                <span class="badge-status" style="margin-bottom: 0.4rem; display: inline-block;">
+                    <i class="fa-solid fa-shield-check"></i> Authenticated Owner Session
+                </span>
+                <h1 style="font-size: 1.8rem; color: #ffffff;">Executive Ledger & Notification Control</h1>
+                <p style="color: var(--text-secondary); font-size: 0.85rem;">
+                    Live data synchronized directly with <code>hotel_bookings.xlsx</code> & <code>food_orders.xlsx</code>.
+                </p>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+                <button class="glass-button" onclick="switchAdminTab('supabase')" style="border-color: rgba(56, 189, 248, 0.6); color: #38bdf8;" title="Configure Supabase Database">
+                    <i class="fa-solid fa-cloud"></i> Supabase Cloud Config
+                </button>
+                <button class="glass-button" onclick="loadDashboardData()" title="Reload Data">
+                    <i class="fa-solid fa-rotate"></i> Refresh
+                </button>
+                <button class="gold-button" onclick="handleOwnerLogout()">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                </button>
+            </div>
+        </div>
+
+        <!-- KPI Summary Cards -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-icon blue"><i class="fa-solid fa-hotel"></i></div>
+                <div>
+                    <div class="kpi-val" id="kpiRoomsCount">0</div>
+                    <div class="kpi-label">Suites Reserved</div>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon gold"><i class="fa-solid fa-coins"></i></div>
+                <div>
+                    <div class="kpi-val" id="kpiRoomsRev">$0.00</div>
+                    <div class="kpi-label">Room Revenue</div>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon emerald"><i class="fa-solid fa-utensils"></i></div>
+                <div>
+                    <div class="kpi-val" id="kpiFoodCount">0</div>
+                    <div class="kpi-label">Food Orders</div>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon purple"><i class="fa-solid fa-wine-glass"></i></div>
+                <div>
+                    <div class="kpi-val" id="kpiFoodRev">$0.00</div>
+                    <div class="kpi-label">Dining Revenue</div>
+                </div>
+            </div>
+            <div class="kpi-card" style="border-color: var(--border-gold);">
+                <div class="kpi-icon gold"><i class="fa-solid fa-sack-dollar"></i></div>
+                <div>
+                    <div class="kpi-val gold-gradient-text" id="kpiCombinedRev">$0.00</div>
+                    <div class="kpi-label">Combined Revenue</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table Management Container -->
+        <div class="admin-table-container">
+            <div class="table-toolbar">
+                <div class="table-tabs">
+                    <button class="tbl-btn active" id="btnTabRooms" onclick="switchAdminTab('rooms')">
+                        <i class="fa-solid fa-bed"></i> Room Bookings (<span id="tabCountRooms">0</span>)
+                    </button>
+                    <button class="tbl-btn" id="btnTabFood" onclick="switchAdminTab('food')">
+                        <i class="fa-solid fa-utensils"></i> Culinary Orders (<span id="tabCountFood">0</span>)
+                    </button>
+                    <button class="tbl-btn" id="btnTabSettings" onclick="switchAdminTab('settings')">
+                        <i class="fa-solid fa-envelope-circle-check"></i> Email & SMS Settings
+                    </button>
+                    <button class="tbl-btn" id="btnTabSupabase" onclick="switchAdminTab('supabase')" style="border-color: rgba(56, 189, 248, 0.6); color: #38bdf8;">
+                        <i class="fa-solid fa-cloud"></i> Online Supabase Cloud Database <span id="supabaseTabDot" style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#ef4444; margin-left:6px;" title="Cloud status"></span>
+                    </button>
+                </div>
+
+                <div style="display: flex; gap: 0.75rem;">
+                    <a href="/api/download-excel/rooms" class="tbl-btn" style="text-decoration: none;" title="Download Room Excel Spreadsheet">
+                        <i class="fa-solid fa-file-excel" style="color: #10b981;"></i> Download Rooms.xlsx
+                    </a>
+                    <a href="/api/download-excel/food" class="tbl-btn" style="text-decoration: none;" title="Download Food Excel Spreadsheet">
+                        <i class="fa-solid fa-file-excel" style="color: #f59e0b;"></i> Download Food.xlsx
+                    </a>
+                </div>
+            </div>
+
+            <!-- TAB 1: ROOM BOOKINGS -->
+            <div id="tableWrapRooms">
+                <table class="excel-table">
+                    <thead>
+                        <tr>
+                            <th>Booking ID</th>
+                            <th>Timestamp</th>
+                            <th>Guest Name</th>
+                            <th>Email Address</th>
+                            <th>Phone</th>
+                            <th>Suite Type</th>
+                            <th>Stay Dates</th>
+                            <th>Nights</th>
+                            <th>Guests</th>
+                            <th>Total ($)</th>
+                            <th>Payment</th>
+                            <th>Milestone Status & Live Tracker</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyRooms">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- TAB 2: FOOD ORDERS -->
+            <div id="tableWrapFood" style="display: none;">
+                <table class="excel-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Timestamp</th>
+                            <th>Customer Name</th>
+                            <th>Phone</th>
+                            <th>Service Type</th>
+                            <th>Suite / Table</th>
+                            <th>Time</th>
+                            <th>Itemized Dishes</th>
+                            <th>Total ($)</th>
+                            <th>Payment</th>
+                            <th>Milestone Status & Live Tracker</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyFood">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- TAB 3: EMAIL & SMS SETTINGS -->
+            <div id="tableWrapSettings" style="display: none;">
+                <div class="settings-card">
+                    <h3 class="settings-section-title"><i class="fa-solid fa-envelope"></i> Sender Email (SMTP) Configuration</h3>
+                    <div class="hint-box">
+                        <strong>How to send real emails to customer inboxes:</strong><br>
+                        1. Enter your Sender Email (e.g. your Gmail).<br>
+                        2. <strong>For Gmail:</strong> You must create a 16-letter <strong>App Password</strong> (go to Google Account &rarr; Security &rarr; 2-Step Verification &rarr; App Passwords &rarr; create one for "Mail"). Enter that 16-letter password below.<br>
+                        3. Click <strong>"Save Configuration"</strong> and then test with <strong>"Send Test Email"</strong>.
+                    </div>
+
+                    <form id="notificationSettingsForm" onsubmit="handleSaveNotificationConfig(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-at"></i> Sender Email Address</label>
+                                <input type="email" id="cfgSenderEmail" class="luxury-input" placeholder="e.g. srmhotel2022@gmail.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-signature"></i> Sender Display Name</label>
+                                <input type="text" id="cfgSenderName" class="luxury-input" placeholder="THE SRM GRAND HOTEL & RESORTS" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-key"></i> Email App Password / SMTP Password</label>
+                                <input type="password" id="cfgSenderPassword" class="luxury-input" placeholder="Enter 16-character App Password">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-server"></i> SMTP Server & Port</label>
+                                <div style="display:flex; gap:0.5rem;">
+                                    <input type="text" id="cfgSmtpServer" class="luxury-input" style="flex:2;" value="smtp.gmail.com">
+                                    <input type="number" id="cfgSmtpPort" class="luxury-input" style="flex:1;" value="465">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="settings-section-title" style="margin-top: 1.5rem;"><i class="fa-solid fa-mobile-screen-button"></i> Mobile SMS Provider Configuration</h3>
+                        <div class="hint-box">
+                            To deliver real cellular SMS to customer phones, configure <strong>Fast2SMS</strong> (India/Global) or <strong>Twilio</strong>. If left blank, SMS alerts will be recorded in the local outbox log.
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-tower-broadcast"></i> SMS Provider</label>
+                                <select id="cfgSmsProvider" class="luxury-input">
+                                    <option value="fast2sms">Fast2SMS (Quick / API Key)</option>
+                                    <option value="twilio">Twilio (Global Cellular)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-key"></i> Fast2SMS API Key (if using Fast2SMS)</label>
+                                <input type="text" id="cfgFast2smsKey" class="luxury-input" placeholder="Fast2SMS Authorization Key">
+                            </div>
+                        </div>
+
+                        <div style="display:flex; justify-content:flex-end; margin-top:1.5rem;">
+                            <button type="submit" class="gold-button">
+                                <i class="fa-solid fa-floppy-disk"></i> Save Configuration
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- LIVE TEST SENDING -->
+                    <div class="test-box">
+                        <div style="flex:1; min-width:260px;">
+                            <label style="font-size:0.8rem; color:#94a3b8; display:block; margin-bottom:0.3rem;"><i class="fa-solid fa-paper-plane"></i> Test Real Email Sending</label>
+                            <input type="email" id="testEmailInput" class="luxury-input" placeholder="Enter recipient email to test...">
+                        </div>
+                        <button type="button" class="glass-button" onclick="sendTestEmailNow()" style="margin-top:1.2rem;">
+                            <i class="fa-solid fa-envelope"></i> Send Test Email
+                        </button>
+                    </div>
+
+                    <div class="test-box">
+                        <div style="flex:1; min-width:260px;">
+                            <label style="font-size:0.8rem; color:#94a3b8; display:block; margin-bottom:0.3rem;"><i class="fa-solid fa-comment-sms"></i> Test Real SMS Sending</label>
+                            <input type="tel" id="testPhoneInput" class="luxury-input" placeholder="Enter mobile number with country code...">
+                        </div>
+                        <button type="button" class="glass-button" onclick="sendTestSmsNow()" style="margin-top:1.2rem;">
+                            <i class="fa-solid fa-mobile-screen"></i> Send Test SMS
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: SUPABASE CLOUD DATABASE CONFIGURATION -->
+            <div id="tableWrapSupabase" style="display: none;">
+                <div class="settings-card">
+                    <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #1e293b; padding-bottom:1rem; margin-bottom:1.2rem;">
+                        <h3 class="settings-section-title" style="margin:0;"><i class="fa-solid fa-cloud" style="color: #38bdf8;"></i> Online Supabase Cloud Database</h3>
+                        <span id="supabaseStatusBadge" style="padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; background: rgba(148, 163, 184, 0.15); color: #94a3b8; border: 1px solid #475569;">
+                            Checking...
+                        </span>
+                    </div>
+
+                    <div class="hint-box">
+                        <strong>Live Cloud Storage with Supabase (PostgreSQL):</strong><br>
+                        1. Create a free project at <a href="https://supabase.com" target="_blank" style="color:#d4af37; text-decoration:underline; font-weight:bold;">supabase.com</a>.<br>
+                        2. Go to <strong>SQL Editor</strong> &rarr; run the provided <code>supabase_schema.sql</code> script from your project.<br>
+                        3. Go to <strong>Project Settings &rarr; Data API (or API)</strong>, copy your <strong>Project URL</strong> and <strong>Anon API Key</strong>, then paste them below.<br>
+                        4. All reservations, dining orders, and reviews will automatically be saved online in Supabase!
+                    </div>
+
+                    <form id="supabaseSettingsForm" onsubmit="handleSaveSupabaseConfig(event)">
+                        <div class="form-row">
+                            <div class="form-group" style="flex:2;">
+                                <label><i class="fa-solid fa-link"></i> Supabase Project URL</label>
+                                <input type="url" id="cfgSupabaseUrl" class="luxury-input" placeholder="https://xyzprojectid.supabase.co" required>
+                            </div>
+                            <div class="form-group" style="flex:1;">
+                                <label><i class="fa-solid fa-toggle-on"></i> Cloud Sync</label>
+                                <select id="cfgSupabaseEnabled" class="luxury-input">
+                                    <option value="true">Enabled (Live Cloud Sync)</option>
+                                    <option value="false">Disabled (Local Excel Only)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-key"></i> Supabase API Key (anon public key)</label>
+                                <input type="password" id="cfgSupabaseKey" class="luxury-input" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...">
+                            </div>
+                        </div>
+
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1.5rem; flex-wrap:wrap; gap:1rem;">
+                            <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+                                <button type="button" class="glass-button" onclick="testSupabaseConnectionNow()" style="border-color: #38bdf8; color: #38bdf8;">
+                                    <i class="fa-solid fa-bolt"></i> Test Cloud Connection
+                                </button>
+                                <button type="button" class="glass-button" onclick="syncAllExcelToSupabaseNow()" title="Migrate existing Excel rows to Supabase">
+                                    <i class="fa-solid fa-cloud-arrow-up"></i> 1-Click Sync All Excel to Cloud
+                                </button>
+                            </div>
+                            <button type="submit" class="gold-button">
+                                <i class="fa-solid fa-floppy-disk"></i> Save Supabase Settings
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Notification Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            checkOwnerStatus();
+        });
+
+        async function checkOwnerStatus() {
+            try {
+                const res = await fetch('/api/owner/status');
+                const data = await res.json();
+                if (data.authenticated) {
+                    showDashboard();
+                } else {
+                    showLogin();
+                }
+            } catch (e) {
+                showLogin();
+            }
+        }
+
+        async function handleOwnerLogin(e) {
+            e.preventDefault();
+            const username = document.getElementById('ownerUser').value.trim();
+            const password = document.getElementById('ownerPass').value.trim();
+            const errEl = document.getElementById('loginErrorMsg');
+            errEl.style.display = 'none';
+
+            try {
+                const res = await fetch('/api/owner/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showDashboard();
+                } else {
+                    errEl.textContent = data.error || 'Authentication failed.';
+                    errEl.style.display = 'block';
+                }
+            } catch (err) {
+                errEl.textContent = 'Server connection error.';
+                errEl.style.display = 'block';
+            }
+        }
+
+        async function handleOwnerLogout() {
+            await fetch('/api/owner/logout', { method: 'POST' });
+            showLogin();
+        }
+
+        function showLogin() {
+            document.getElementById('loginWrap').style.display = 'flex';
+            document.getElementById('dashboardWrap').style.display = 'none';
+        }
+
+        function showDashboard() {
+            document.getElementById('loginWrap').style.display = 'none';
+            document.getElementById('dashboardWrap').style.display = 'block';
+            loadDashboardData();
+            loadNotificationConfig();
+            loadSupabaseConfig();
+        }
+
+        async function loadDashboardData() {
+            try {
+                const res = await fetch('/api/owner/dashboard');
+                if (res.status === 401) {
+                    showLogin();
+                    return;
+                }
+                const result = await res.json();
+                if (!result.success) return;
+
+                const { stats, room_bookings, food_orders } = result.data;
+
+                // Update KPIs
+                document.getElementById('kpiRoomsCount').textContent = stats.total_room_bookings;
+                document.getElementById('kpiRoomsRev').textContent = `$${stats.total_room_revenue.toFixed(2)}`;
+                document.getElementById('kpiFoodCount').textContent = stats.total_food_orders;
+                document.getElementById('kpiFoodRev').textContent = `$${stats.total_food_revenue.toFixed(2)}`;
+                document.getElementById('kpiCombinedRev').textContent = `$${stats.total_combined_revenue.toFixed(2)}`;
+
+                document.getElementById('tabCountRooms').textContent = room_bookings.length;
+                document.getElementById('tabCountFood').textContent = food_orders.length;
+
+                // Render Rooms Table
+                const tbodyRooms = document.getElementById('tbodyRooms');
+                if (room_bookings.length === 0) {
+                    tbodyRooms.innerHTML = '<tr><td colspan="12" style="text-align:center; padding: 2rem; color:#94a3b8;">No room bookings recorded yet.</td></tr>';
+                } else {
+                    tbodyRooms.innerHTML = room_bookings.map(r => `
+                        <tr>
+                            <td><span class="ref-code">${r.booking_id}</span></td>
+                            <td style="color:#94a3b8;">${r.timestamp}</td>
+                            <td><strong>${r.guest_name}</strong></td>
+                            <td style="color:#94a3b8;">${r.email}</td>
+                            <td>${r.phone}</td>
+                            <td>${r.room_type}</td>
+                            <td>${r.check_in} &rarr; ${r.check_out}</td>
+                            <td>${r.nights}</td>
+                            <td>${r.guests}</td>
+                            <td style="font-weight:700; color:#f5d77f;">$${r.total.toFixed(2)}</td>
+                            <td>${r.payment_mode}</td>
+                            <td>
+                                <div style="display:flex; align-items:center;">
+                                    <select class="status-selector" onchange="updateLiveStatus('${r.booking_id}', this.value)">
+                                        <option value="Confirmed" ${r.status === 'Confirmed' ? 'selected' : ''}>1. Confirmed</option>
+                                        <option value="Suite Preparation" ${r.status && r.status.includes('Prep') ? 'selected' : ''}>2. Suite Prep</option>
+                                        <option value="VIP Butler Assigned" ${r.status && r.status.includes('Butler') ? 'selected' : ''}>3. Butler Assigned</option>
+                                        <option value="Ready for Check-In" ${r.status && r.status.includes('Ready') ? 'selected' : ''}>4. Ready for Check-In</option>
+                                        <option value="Checked In" ${r.status && r.status.includes('Checked') ? 'selected' : ''}>Completed: Checked In</option>
+                                    </select>
+                                    <a href="/?track=${r.booking_id}" target="_blank" class="track-link-btn" title="View Customer Live Tracker">
+                                        <i class="fa-solid fa-location-crosshairs"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    `).join('');
+                }
+
+                // Render Food Table
+                const tbodyFood = document.getElementById('tbodyFood');
+                if (food_orders.length === 0) {
+                    tbodyFood.innerHTML = '<tr><td colspan="11" style="text-align:center; padding: 2rem; color:#94a3b8;">No culinary orders recorded yet.</td></tr>';
+                } else {
+                    tbodyFood.innerHTML = food_orders.map(f => `
+                        <tr>
+                            <td><span class="ref-code">${f.order_id}</span></td>
+                            <td style="color:#94a3b8;">${f.timestamp}</td>
+                            <td><strong>${f.customer_name}</strong></td>
+                            <td>${f.phone}</td>
+                            <td>${f.service_type}</td>
+                            <td>${f.destination}</td>
+                            <td>${f.preferred_time}</td>
+                            <td style="max-width:250px; overflow:hidden; text-overflow:ellipsis;" title="${f.dishes}">${f.dishes}</td>
+                            <td style="font-weight:700; color:#f5d77f;">$${f.grand_total.toFixed(2)}</td>
+                            <td>${f.payment_mode}</td>
+                            <td>
+                                <div style="display:flex; align-items:center;">
+                                    <select class="status-selector" onchange="updateLiveStatus('${f.order_id}', this.value)">
+                                        <option value="Confirmed & Preparing" ${f.status && f.status.includes('Confirmed') ? 'selected' : ''}>1. Order Received</option>
+                                        <option value="Kitchen Preparing" ${f.status && f.status.includes('Kitchen') ? 'selected' : ''}>2. Kitchen Prep</option>
+                                        <option value="Plating & Inspection" ${f.status && f.status.includes('Plat') ? 'selected' : ''}>3. Plating & Inspection</option>
+                                        <option value="En Route / Delivered" ${f.status && (f.status.includes('Route') || f.status.includes('Deliver')) ? 'selected' : ''}>4. En Route / Delivered</option>
+                                        <option value="Completed" ${f.status === 'Completed' ? 'selected' : ''}>Completed: Served</option>
+                                    </select>
+                                    <a href="/?track=${f.order_id}" target="_blank" class="track-link-btn" title="View Customer Live Tracker">
+                                        <i class="fa-solid fa-location-crosshairs"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    `).join('');
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        async function loadNotificationConfig() {
+            try {
+                const res = await fetch('/api/owner/config');
+                const data = await res.json();
+                if (data.success && data.config) {
+                    const c = data.config;
+                    document.getElementById('cfgSenderEmail').value = c.sender_email || '';
+                    document.getElementById('cfgSenderName').value = c.sender_name || 'THE SRM GRAND';
+                    document.getElementById('cfgSmtpServer').value = c.smtp_server || 'smtp.gmail.com';
+                    document.getElementById('cfgSmtpPort').value = c.smtp_port || 465;
+                    document.getElementById('cfgSmsProvider').value = c.sms_provider || 'fast2sms';
+                    document.getElementById('cfgFast2smsKey').value = c.fast2sms_api_key || '';
+                    if (c.sender_password_masked) {
+                        document.getElementById('cfgSenderPassword').placeholder = c.sender_password_masked;
+                    }
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        async function loadSupabaseConfig() {
+            try {
+                const res = await fetch('/api/owner/supabase-config');
+                const data = await res.json();
+                if (data.success && data.config) {
+                    const c = data.config;
+                    document.getElementById('cfgSupabaseUrl').value = c.supabase_url || '';
+                    document.getElementById('cfgSupabaseEnabled').value = c.supabase_enabled ? 'true' : 'false';
+                    if (c.supabase_key_masked) {
+                        document.getElementById('cfgSupabaseKey').placeholder = c.supabase_key_masked;
+                    }
+                    const badge = document.getElementById('supabaseStatusBadge');
+                    const tabDot = document.getElementById('supabaseTabDot');
+                    if (c.is_configured) {
+                        badge.style.background = 'rgba(16, 185, 129, 0.15)';
+                        badge.style.color = '#34d399';
+                        badge.style.border = '1px solid #10b981';
+                        badge.innerHTML = '&#10003; CLOUD SYNC ACTIVE';
+                        if (tabDot) { tabDot.style.background = '#10b981'; tabDot.title = 'Cloud Active'; }
+                    } else {
+                        badge.style.background = 'rgba(239, 68, 68, 0.15)';
+                        badge.style.color = '#f87171';
+                        badge.style.border = '1px solid #ef4444';
+                        badge.innerHTML = '&#9888; UNCONFIGURED';
+                        if (tabDot) { tabDot.style.background = '#ef4444'; tabDot.title = 'Unconfigured'; }
+                    }
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        async function handleSaveSupabaseConfig(e) {
+            e.preventDefault();
+            const supabase_url = document.getElementById('cfgSupabaseUrl').value.trim();
+            const supabase_enabled = document.getElementById('cfgSupabaseEnabled').value === 'true';
+            const supabase_key = document.getElementById('cfgSupabaseKey').value.trim();
+
+            try {
+                const res = await fetch('/api/owner/supabase-config', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ supabase_url, supabase_enabled, supabase_key })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showToast('Supabase settings saved successfully!', 'success');
+                    loadSupabaseConfig();
+                } else {
+                    showToast(data.error || 'Failed to save Supabase settings', 'error');
+                }
+            } catch (e) {
+                showToast('Error saving Supabase settings', 'error');
+            }
+        }
+
+        async function testSupabaseConnectionNow() {
+            showToast('Testing Supabase cloud connection...', 'info');
+            try {
+                const res = await fetch('/api/owner/supabase-test', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showToast(data.message, 'success');
+                    loadSupabaseConfig();
+                } else {
+                    showToast(data.message || 'Connection failed', 'error');
+                }
+            } catch (e) {
+                showToast('Could not reach test server', 'error');
+            }
+        }
+
+        async function syncAllExcelToSupabaseNow() {
+            showToast('Migrating all local Excel rows to Supabase...', 'info');
+            try {
+                const res = await fetch('/api/owner/supabase-sync', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showToast(data.message, 'success');
+                } else {
+                    showToast(data.message || 'Migration failed', 'error');
+                }
+            } catch (e) {
+                showToast('Could not contact migration service', 'error');
+            }
+        }
+
+        async function handleSaveNotificationConfig(e) {
+            e.preventDefault();
+            const sender_email = document.getElementById('cfgSenderEmail').value.trim();
+            const sender_name = document.getElementById('cfgSenderName').value.trim();
+            const sender_password = document.getElementById('cfgSenderPassword').value.trim();
+            const smtp_server = document.getElementById('cfgSmtpServer').value.trim();
+            const smtp_port = parseInt(document.getElementById('cfgSmtpPort').value) || 465;
+            const sms_provider = document.getElementById('cfgSmsProvider').value;
+            const fast2sms_api_key = document.getElementById('cfgFast2smsKey').value.trim();
+
+            const payload = {
+                smtp_enabled: true,
+                sender_email,
+                sender_name,
+                smtp_server,
+                smtp_port,
+                use_ssl: (smtp_port === 465),
+                sms_enabled: bool(fast2sms_api_key),
+                sms_provider,
+                fast2sms_api_key
+            };
+
+            if (sender_password) {
+                payload.sender_password = sender_password;
+            }
+
+            try {
+                const res = await fetch('/api/owner/config', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showToast('Notification settings saved successfully!', 'success');
+                } else {
+                    showToast(data.error || 'Failed to save settings', 'error');
+                }
+            } catch (e) {
+                showToast('Error saving settings', 'error');
+            }
+        }
+
+        async function sendTestEmailNow() {
+            const test_email = document.getElementById('testEmailInput').value.trim();
+            if (!test_email) {
+                showToast('Please enter an email address to test', 'error');
+                return;
+            }
+            showToast('Sending test email...', 'info');
+            try {
+                const res = await fetch('/api/owner/test-email', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ test_email })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showToast(data.message, 'success');
+                } else {
+                    showToast(data.message || data.error || 'Email test failed', 'error');
+                }
+            } catch (e) {
+                showToast('Failed to contact email test server', 'error');
+            }
+        }
+
+        async function sendTestSmsNow() {
+            const test_phone = document.getElementById('testPhoneInput').value.trim();
+            if (!test_phone) {
+                showToast('Please enter a mobile phone number to test', 'error');
+                return;
+            }
+            showToast('Sending test SMS...', 'info');
+            try {
+                const res = await fetch('/api/owner/test-sms', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ test_phone })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showToast(data.message, 'success');
+                } else {
+                    showToast(data.message || data.error || 'SMS test failed', 'error');
+                }
+            } catch (e) {
+                showToast('Failed to contact SMS test server', 'error');
+            }
+        }
+
+        function switchAdminTab(type) {
+            const btnR = document.getElementById('btnTabRooms');
+            const btnF = document.getElementById('btnTabFood');
+            const btnS = document.getElementById('btnTabSettings');
+            const btnSub = document.getElementById('btnTabSupabase');
+            const wrapR = document.getElementById('tableWrapRooms');
+            const wrapF = document.getElementById('tableWrapFood');
+            const wrapS = document.getElementById('tableWrapSettings');
+            const wrapSub = document.getElementById('tableWrapSupabase');
+
+            btnR.classList.remove('active');
+            btnF.classList.remove('active');
+            btnS.classList.remove('active');
+            if (btnSub) btnSub.classList.remove('active');
+            wrapR.style.display = 'none';
+            wrapF.style.display = 'none';
+            wrapS.style.display = 'none';
+            if (wrapSub) wrapSub.style.display = 'none';
+
+            if (type === 'rooms') {
+                btnR.classList.add('active');
+                wrapR.style.display = 'block';
+            } else if (type === 'food') {
+                btnF.classList.add('active');
+                wrapF.style.display = 'block';
+            } else if (type === 'settings') {
+                btnS.classList.add('active');
+                wrapS.style.display = 'block';
+                loadNotificationConfig();
+            } else if (type === 'supabase') {
+                if (btnSub) btnSub.classList.add('active');
+                if (wrapSub) wrapSub.style.display = 'block';
+                loadSupabaseConfig();
+            }
+        }
+
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toastContainer');
+            if (!container) return;
+
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `
+                <i class="fa-solid ${type === 'success' ? 'fa-circle-check' : (type === 'error' ? 'fa-triangle-exclamation' : 'fa-bell')}"></i>
+                <span>${message}</span>
+            `;
+
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(50px)';
+                toast.style.transition = 'all 0.3s ease';
+                setTimeout(() => toast.remove(), 300);
+            }, 5000);
+        }
+
+        async function updateLiveStatus(refId, newStatus) {
+            try {
+                const res = await fetch('/api/owner/update-status', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ ref_id: refId, new_status: newStatus })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showToast(`Status for ${refId} updated to '${newStatus}'`, 'success');
+                } else {
+                    showToast(data.error || 'Failed to update status', 'error');
+                }
+            } catch (err) {
+                showToast('Network error updating status', 'error');
+            }
+        }
+
+        function bool(val) {
+            return Boolean(val);
+        }
+    </script>
+</body>
+</html>

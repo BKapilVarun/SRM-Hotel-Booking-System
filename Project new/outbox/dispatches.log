@@ -1,0 +1,681 @@
+=== AURORA GRAND DISPATCH NOTIFICATION LOG ===
+Initialized: 2026-10-07 21:17:01.711689
+
+
+============================================================
+[2026-10-07 21:22:17] TYPE: SMS
+RECIPIENT: +44 7700 900888
+SUBJECT / TITLE: Booking Confirmation AUR-RM-10072122-D1E0
+CONTENT:
+AURORA GRAND RESORT: Reservation Confirmed for Sir Ronald Sterling!
+Ref Code: AUR-RM-10072122-D1E0
+Suite: The Presidential Sky Penthouse (4 Nights)
+Stay: 2026-12-24 to 2026-12-28
+Total: $3400.00
+An official receipt has been emailed to ronald@sterling.co.uk. We look forward to welcoming you!
+============================================================
+
+============================================================
+[2026-10-07 21:22:17] TYPE: EMAIL
+RECIPIENT: ronald@sterling.co.uk
+SUBJECT / TITLE: Aurora Grand Reservation Receipt - AUR-RM-10072122-D1E0
+CONTENT:
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #0b0f19; color: #f8fafc; padding: 20px; }
+            .container { max-width: 600px; margin: 0 auto; background-color: #121829; border: 1px solid #d4af37; border-radius: 12px; overflow: hidden; }
+            .header { background: linear-gradient(135deg, #1e293b, #0f172a); padding: 30px 20px; text-align: center; border-bottom: 2px solid #d4af37; }
+            .header h1 { margin: 0; color: #d4af37; font-size: 24px; letter-spacing: 2px; }
+            .header p { margin: 5px 0 0; color: #94a3b8; font-size: 13px; letter-spacing: 1px; }
+            .content { padding: 30px 25px; }
+            .badge { display: inline-block; background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid #34d399; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 20px; }
+            .details-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+            .details-table td { padding: 12px 0; border-bottom: 1px solid #1e293b; font-size: 14px; }
+            .details-table td.label { color: #94a3b8; width: 40%; }
+            .details-table td.value { color: #ffffff; font-weight: 600; text-align: right; }
+            .total-box { background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37; padding: 15px; border-radius: 8px; text-align: right; margin-top: 20px; }
+            .total-box span { font-size: 14px; color: #94a3b8; display: block; }
+            .total-box strong { font-size: 24px; color: #f5d77f; }
+            .footer { background-color: #0a0e17; padding: 20px; text-align: center; font-size: 12px; color: #64748b; border-top: 1px solid #1e293b; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>AURORA GRAND</h1>
+                <p>PALACE SUITES & HAUTE CUISINE</p>
+            </div>
+            <div class="content">
+                <div class="badge">&#10003; RESERVATION CONFIRMED</div>
+                <h2 style="margin: 0 0 10px; color: #ffffff;">Dear Sir Ronald Sterling,</h2>
+                <p style="color: #94a3b8; font-size: 14px; line-height: 1.6;">
+                    Thank you for selecting Aurora Grand. Your luxury suite reservation is secured in our private guest ledger. Below is your official receipt.
+                </p>
+                <table class="details-table">
+                    <tr><td class="label">Confirmation Code:</td><td class="value" style="color:#d4af37; font-family:monospace; font-size:16px;">AUR-RM-10072122-D1E0</td></tr>
+                    <tr><td class="label">Accommodations:</td><td class="value">The Presidential Sky Penthouse</td></tr>
+                    <tr><td class="label">Check-In Date:</td><td class="value">2026-12-24 (from 3:00 PM)</td></tr>
+                    <tr><td class="label">Check-Out Date:</td><td class="value">2026-12-28 (until 12:00 PM)</td></tr>
+                    <tr><td class="label">Total Nights:</td><td class="value">4 Nights</td></tr>
+                    <tr><td class="label">Primary Phone:</td><td class="value">+44 7700 900888</td></tr>
+                </table>
+                <div class="total-box">
+                    <span>Total Accommodation Amount:</span>
+                    <strong>$3400.00</strong>
+                </div>
+            </div>
+            <div class="footer">
+                <p>&copy; 2026 Aurora Grand Resort & Spa. All records stored securely in property ledgers.</p>
+                <p>Concierge Desk: +1 (800) 555-AURORA | concierge@auroragrandpalace.com</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    
+============================================================
+
+============================================================
+[2026-10-07 21:26:28] TYPE: SMS
+RECIPIENT: 2342342424
+SUBJECT / TITLE: Booking Confirmation AUR-RM-10072126-6C85
+CONTENT:
+AURORA GRAND RESORT: Reservation Confirmed for B Kapil Varun M Babu!
+Ref Code: AUR-RM-10072126-6C85
+Suite: Emerald Oceanfront Pool Villa (1 Nights)
+Stay: 2026-10-07 to 2026-10-08
+Total: $620.00
+An official receipt has been emailed to muthuvelu.s2004@gmail.com. We look forward to welcoming you!
+============================================================
+
+============================================================
+[2026-10-07 21:26:28] TYPE: EMAIL
+RECIPIENT: muthuvelu.s2004@gmail.com
+SUBJECT / TITLE: Aurora Grand Reservation Receipt - AUR-RM-10072126-6C85
+CONTENT:
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #0b0f19; color: #f8fafc; padding: 20px; }
+            .container { max-width: 600px; margin: 0 auto; background-color: #121829; border: 1px solid #d4af37; border-radius: 12px; overflow: hidden; }
+            .header { background: linear-gradient(135deg, #1e293b, #0f172a); padding: 30px 20px; text-align: center; border-bottom: 2px solid #d4af37; }
+            .header h1 { margin: 0; color: #d4af37; font-size: 24px; letter-spacing: 2px; }
+            .header p { margin: 5px 0 0; color: #94a3b8; font-size: 13px; letter-spacing: 1px; }
+            .content { padding: 30px 25px; }
+            .badge { display: inline-block; background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid #34d399; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 20px; }
+            .details-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+            .details-table td { padding: 12px 0; border-bottom: 1px solid #1e293b; font-size: 14px; }
+            .details-table td.label { color: #94a3b8; width: 40%; }
+            .details-table td.value { color: #ffffff; font-weight: 600; text-align: right; }
+            .total-box { background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37; padding: 15px; border-radius: 8px; text-align: right; margin-top: 20px; }
+            .total-box span { font-size: 14px; color: #94a3b8; display: block; }
+            .total-box strong { font-size: 24px; color: #f5d77f; }
+            .footer { background-color: #0a0e17; padding: 20px; text-align: center; font-size: 12px; color: #64748b; border-top: 1px solid #1e293b; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>AURORA GRAND</h1>
+                <p>PALACE SUITES & HAUTE CUISINE</p>
+            </div>
+            <div class="content">
+                <div class="badge">&#10003; RESERVATION CONFIRMED</div>
+                <h2 style="margin: 0 0 10px; color: #ffffff;">Dear B Kapil Varun M Babu,</h2>
+                <p style="color: #94a3b8; font-size: 14px; line-height: 1.6;">
+                    Thank you for selecting Aurora Grand. Your luxury suite reservation is secured in our private guest ledger. Below is your official receipt.
+                </p>
+                <table class="details-table">
+                    <tr><td class="label">Confirmation Code:</td><td class="value" style="color:#d4af37; font-family:monospace; font-size:16px;">AUR-RM-10072126-6C85</td></tr>
+                    <tr><td class="label">Accommodations:</td><td class="value">Emerald Oceanfront Pool Villa</td></tr>
+                    <tr><td class="label">Check-In Date:</td><td class="value">2026-10-07 (from 3:00 PM)</td></tr>
+                    <tr><td class="label">Check-Out Date:</td><td class="value">2026-10-08 (until 12:00 PM)</td></tr>
+                    <tr><td class="label">Total Nights:</td><td class="value">1 Nights</td></tr>
+                    <tr><td class="label">Primary Phone:</td><td class="value">2342342424</td></tr>
+                </table>
+                <div class="total-box">
+                    <span>Total Accommodation Amount:</span>
+                    <strong>$620.00</strong>
+                </div>
+            </div>
+            <div class="footer">
+                <p>&copy; 2026 Aurora Grand Resort & Spa. All records stored securely in property ledgers.</p>
+                <p>Concierge Desk: +1 (800) 555-AURORA | concierge@auroragrandpalace.com</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    
+============================================================
+
+============================================================
+[2026-10-07 21:36:24] TYPE: EMAIL | STATUS: QUEUED_OFFLINE (Configure in Owner Portal)
+RECIPIENT: guest@example.com
+SUBJECT / TITLE: Aurora Grand - SMTP Configuration Test
+CONTENT:
+
+    <div style="font-family:sans-serif; padding:20px; background:#0f172a; color:#ffffff; border-radius:8px;">
+        <h2 style="color:#d4af37;">&#10003; Aurora Grand SMTP Test Successful!</h2>
+        <p>Your email sending configuration is functioning properly.</p>
+        <p style="color:#94a3b8;">Customer booking receipts will now be sent automatically from this email address.</p>
+    </div>
+    
+============================================================
+
+============================================================
+[2026-10-07 21:36:24] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +15551234567
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Test SMS Notification. Your SMS gateway configuration is active!
+============================================================
+
+============================================================
+[2026-10-07 21:37:12] TYPE: EMAIL | STATUS: QUEUED_OFFLINE (Configure in Owner Portal)
+RECIPIENT: ronald@sterling.co.uk
+SUBJECT / TITLE: Aurora Grand - Reservation Receipt [AUR-RM-10072137-B328]
+CONTENT:
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #0b0f19; color: #f8fafc; padding: 20px; }
+            .container { max-width: 600px; margin: 0 auto; background-color: #121829; border: 1px solid #d4af37; border-radius: 12px; overflow: hidden; }
+            .header { background: linear-gradient(135deg, #1e293b, #0f172a); padding: 30px 20px; text-align: center; border-bottom: 2px solid #d4af37; }
+            .header h1 { margin: 0; color: #d4af37; font-size: 24px; letter-spacing: 2px; }
+            .header p { margin: 5px 0 0; color: #94a3b8; font-size: 13px; letter-spacing: 1px; }
+            .content { padding: 30px 25px; }
+            .badge { display: inline-block; background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid #34d399; padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-bottom: 20px; }
+            .details-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+            .details-table td { padding: 12px 0; border-bottom: 1px solid #1e293b; font-size: 14px; }
+            .details-table td.label { color: #94a3b8; width: 40%; }
+            .details-table td.value { color: #ffffff; font-weight: 600; text-align: right; }
+            .total-box { background: rgba(212, 175, 55, 0.1); border: 1px solid #d4af37; padding: 15px; border-radius: 8px; text-align: right; margin-top: 20px; }
+            .footer { background-color: #0a0e17; padding: 20px; text-align: center; font-size: 12px; color: #64748b; border-top: 1px solid #1e293b; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>AURORA GRAND</h1>
+                <p>PALACE SUITES & HAUTE CUISINE</p>
+            </div>
+            <div class="content">
+                <div class="badge">&#10003; RESERVATION CONFIRMED</div>
+                <h2 style="margin: 0 0 10px; color: #ffffff;">Dear Sir Ronald Sterling,</h2>
+                <p style="color: #94a3b8; font-size: 14px; line-height: 1.6;">
+                    Thank you for choosing Aurora Grand. Your luxury suite reservation is secured. Below is your official receipt.
+                </p>
+                <table class="details-table">
+                    <tr><td class="label">Confirmation Code:</td><td class="value" style="color:#d4af37; font-family:monospace; font-size:16px;">AUR-RM-10072137-B328</td></tr>
+                    <tr><td class="label">Accommodations:</td><td class="value">The Presidential Sky Penthouse</td></tr>
+                    <tr><td class="label">Check-In Date:</td><td class="value">2026-12-24 (from 3:00 PM)</td></tr>
+                    <tr><td class="label">Check-Out Date:</td><td class="value">2026-12-28 (until 12:00 PM)</td></tr>
+                    <tr><td class="label">Total Nights:</td><td class="value">4 Nights</td></tr>
+                    <tr><td class="label">Primary Phone:</td><td class="value">+44 7700 900888</td></tr>
+                </table>
+                <div class="total-box">
+                    <span style="color:#94a3b8; font-size:14px; display:block;">Total Accommodation Fee:</span>
+                    <strong style="color:#f5d77f; font-size:24px;">$3400.00</strong>
+                </div>
+            </div>
+            <div class="footer">
+                <p>&copy; 2026 Aurora Grand Resort & Spa. Concierge: +1 (800) 555-AURORA</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    
+============================================================
+
+============================================================
+[2026-10-07 21:37:12] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +44 7700 900888
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Suite Reservation Confirmed for Sir Ronald Sterling!
+Ref Code: AUR-RM-10072137-B328
+Suite: The Presidential Sky Penthouse (4 Nights)
+Dates: 2026-12-24 to 2026-12-28
+Total: $3400.00
+Receipt sent to ronald@sterling.co.uk. We look forward to your stay!
+============================================================
+
+============================================================
+[2026-10-07 21:55:31] TYPE: EMAIL | STATUS: QUEUED_OFFLINE (Configure in Owner Portal)
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - SMTP Configuration Test
+CONTENT:
+
+    <div style="font-family:sans-serif; padding:20px; background:#0f172a; color:#ffffff; border-radius:8px;">
+        <h2 style="color:#d4af37;">&#10003; Aurora Grand SMTP Test Successful!</h2>
+        <p>Your email sending configuration is functioning properly.</p>
+        <p style="color:#94a3b8;">Customer booking receipts will now be sent automatically from this email address.</p>
+    </div>
+    
+============================================================
+
+============================================================
+[2026-10-07 21:57:25] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - Reservation Receipt [AUR-RM-10072157-59FE]
+CONTENT:
+Delivered to varun5406k@gmail.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 21:57:25] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +914427417000
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Suite Reservation Confirmed for varun!
+Ref Code: AUR-RM-10072157-59FE
+Suite: The Presidential Sky Penthouse (1 Nights)
+Dates: 2026-10-07 to 2026-10-08
+Total: $850.00
+Receipt sent to varun5406k@gmail.com. We look forward to your stay!
+============================================================
+
+============================================================
+[2026-10-07 21:57:28] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - Reservation Receipt [AUR-RM-10072157-51F4]
+CONTENT:
+Delivered to varun5406k@gmail.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 21:57:28] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +914427417000
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Suite Reservation Confirmed for varun!
+Ref Code: AUR-RM-10072157-51F4
+Suite: The Presidential Sky Penthouse (1 Nights)
+Dates: 2026-10-07 to 2026-10-08
+Total: $850.00
+Receipt sent to varun5406k@gmail.com. We look forward to your stay!
+============================================================
+
+============================================================
+[2026-10-07 22:13:45] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: sterling.cross@palace.com
+SUBJECT / TITLE: Aurora Grand - Reservation Receipt [AUR-RM-10072213-5A40]
+CONTENT:
+Delivered to sterling.cross@palace.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 22:13:45] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +1 (555) 777-8899
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Suite Reservation Confirmed for Lord Sterling Cross!
+Ref Code: AUR-RM-10072213-5A40
+Suite: Presidential Penthouse (3 Nights)
+Dates: 2026-10-15 to 2026-10-18
+Total: $2550.00
+Live Concierge Tracking: http://127.0.0.1:5000/?track=AUR-RM-10072213-5A40
+Receipt sent to sterling.cross@palace.com. We look forward to your stay!
+============================================================
+
+============================================================
+[2026-10-07 22:13:49] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: vivienne.rose@manor.com
+SUBJECT / TITLE: Aurora Grand - Dining Receipt [AUR-FD-10072213-B86B]
+CONTENT:
+Delivered to vivienne.rose@manor.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 22:13:49] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +1 (555) 333-4422
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND DINING: Order #AUR-FD-10072213-B86B Confirmed for Lady Vivienne Rose!
+Delivery: Room Service (Suite 801)
+Time: Evening Sunset (7:30 PM)
+Items: Truffle-Glazed Wagyu Filet (x2)
+Total: $198.00
+Live Kitchen Tracking: http://127.0.0.1:5000/?track=AUR-FD-10072213-B86B
+Our brigade is currently preparing your order.
+============================================================
+
+============================================================
+[2026-10-07 22:38:48] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - Reservation Receipt [AUR-RM-10072238-5813]
+CONTENT:
+Delivered to varun5406k@gmail.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 22:38:48] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +914427417000
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Suite Reservation Confirmed for Kapil Varun!
+Ref Code: AUR-RM-10072238-5813
+Suite: Emerald Oceanfront Pool Villa (12 Nights)
+Dates: 2026-10-08 to 2026-10-20
+Total: $7440.00
+Live Concierge Tracking: http://127.0.0.1:5000/?track=AUR-RM-10072238-5813
+Receipt sent to varun5406k@gmail.com. We look forward to your stay!
+============================================================
+
+============================================================
+[2026-10-07 22:38:49] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - Reservation Receipt [AUR-RM-10072238-5EEC]
+CONTENT:
+Delivered to varun5406k@gmail.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 22:38:49] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +914427417000
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Suite Reservation Confirmed for Kapil Varun!
+Ref Code: AUR-RM-10072238-5EEC
+Suite: Emerald Oceanfront Pool Villa (12 Nights)
+Dates: 2026-10-08 to 2026-10-20
+Total: $7440.00
+Live Concierge Tracking: http://127.0.0.1:5000/?track=AUR-RM-10072238-5EEC
+Receipt sent to varun5406k@gmail.com. We look forward to your stay!
+============================================================
+
+============================================================
+[2026-10-07 22:55:50] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - Reservation Receipt [AUR-RM-TEST-9999]
+CONTENT:
+Delivered to varun5406k@gmail.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 22:55:50] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +91 9876543210
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Suite Reservation Confirmed for Varun K!
+Ref Code: AUR-RM-TEST-9999
+Suite: Emerald Oceanfront Pool Villa (4 Nights)
+Dates: 2026-10-10 to 2026-10-14
+Total: $2480.00
+Live Concierge Tracking: http://127.0.0.1:5000/?track=AUR-RM-TEST-9999
+Receipt sent to varun5406k@gmail.com. We look forward to your stay!
+============================================================
+
+============================================================
+[2026-10-07 23:01:43] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - Reservation Receipt [AUR-RM-TEST-PATTRN]
+CONTENT:
+Delivered to varun5406k@gmail.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 23:01:43] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +91 9876543210
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Suite Reservation Confirmed for Varun K!
+Ref Code: AUR-RM-TEST-PATTRN
+Suite: Emerald Oceanfront Pool Villa (4 Nights)
+Dates: 2026-10-10 to 2026-10-14
+Total: $2480.00
+Live Concierge Tracking: http://127.0.0.1:5000/?track=AUR-RM-TEST-PATTRN
+Receipt sent to varun5406k@gmail.com. We look forward to your stay!
+============================================================
+
+============================================================
+[2026-10-07 23:01:59] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - Dining Receipt [AUR-FD-TEST-PATTRN]
+CONTENT:
+Delivered to varun5406k@gmail.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 23:01:59] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +91 9876543210
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND DINING: Order #AUR-FD-TEST-PATTRN Confirmed for Varun K!
+Delivery: Room Service (Suite 801)
+Time: Evening Dinner (8:00 PM)
+Items: Truffle-Glazed Wagyu Filet (x2), Imperial Osetra Caviar Service (x1)
+Total: $371.80
+Live Kitchen Tracking: http://127.0.0.1:5000/?track=AUR-FD-TEST-PATTRN
+Our brigade is currently preparing your order.
+============================================================
+
+============================================================
+[2026-10-07 23:04:41] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - Stay & Dine Receipt [AUR-RM-UNI-PATTRN]
+CONTENT:
+Delivered to varun5406k@gmail.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 23:04:41] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +91 9876543210
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Imperial Stay & Dine Confirmed for Varun K!
+Room Ref: AUR-RM-UNI-PATTRN | Dining Ref: AUR-FD-UNI-PATTRN
+Suite: Emerald Oceanfront Pool Villa (4 Nights)
+Serving Time: Evening Dinner (8:00 PM)
+Combined Total: $2851.80
+Suite Tracking: http://127.0.0.1:5000/?track=AUR-RM-UNI-PATTRN
+Dining Tracking: http://127.0.0.1:5000/?track=AUR-FD-UNI-PATTRN
+Official receipt delivered to varun5406k@gmail.com.
+============================================================
+
+============================================================
+[2026-10-07 23:06:17] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - Reservation Receipt [AUR-RM-10072306-6053]
+CONTENT:
+Delivered to varun5406k@gmail.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 23:06:17] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +914427417000
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Suite Reservation Confirmed for B Kapil Varun!
+Ref Code: AUR-RM-10072306-6053
+Suite: The Presidential Sky Penthouse (4 Nights)
+Dates: 2026-11-01 to 2026-11-05
+Total: $3400.00
+Live Concierge Tracking: http://127.0.0.1:5000/?track=AUR-RM-10072306-6053
+Receipt sent to varun5406k@gmail.com. We look forward to your stay!
+============================================================
+
+============================================================
+[2026-10-07 23:08:05] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - Reservation Receipt [AUR-RM-10072307-FE77]
+CONTENT:
+Delivered to varun5406k@gmail.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 23:08:05] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +914427417000
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Suite Reservation Confirmed for B Kapil Varun M Babu!
+Ref Code: AUR-RM-10072307-FE77
+Suite: The Presidential Sky Penthouse (1 Nights)
+Dates: 2026-10-07 to 2026-10-08
+Total: $850.00
+Live Concierge Tracking: http://127.0.0.1:5000/?track=AUR-RM-10072307-FE77
+Receipt sent to varun5406k@gmail.com. We look forward to your stay!
+============================================================
+
+============================================================
+[2026-10-07 23:08:06] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - Reservation Receipt [AUR-RM-10072307-6980]
+CONTENT:
+Delivered to varun5406k@gmail.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 23:08:06] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +914427417000
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Suite Reservation Confirmed for B Kapil Varun M Babu!
+Ref Code: AUR-RM-10072307-6980
+Suite: The Presidential Sky Penthouse (1 Nights)
+Dates: 2026-10-07 to 2026-10-08
+Total: $850.00
+Live Concierge Tracking: http://127.0.0.1:5000/?track=AUR-RM-10072307-6980
+Receipt sent to varun5406k@gmail.com. We look forward to your stay!
+============================================================
+
+============================================================
+[2026-10-07 23:08:06] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - Reservation Receipt [AUR-RM-10072308-2708]
+CONTENT:
+Delivered to varun5406k@gmail.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 23:08:06] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +914427417000
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Suite Reservation Confirmed for B Kapil Varun M Babu!
+Ref Code: AUR-RM-10072308-2708
+Suite: The Presidential Sky Penthouse (1 Nights)
+Dates: 2026-10-07 to 2026-10-08
+Total: $850.00
+Live Concierge Tracking: http://127.0.0.1:5000/?track=AUR-RM-10072308-2708
+Receipt sent to varun5406k@gmail.com. We look forward to your stay!
+============================================================
+
+============================================================
+[2026-10-07 23:08:06] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - Reservation Receipt [AUR-RM-10072308-94AB]
+CONTENT:
+Delivered to varun5406k@gmail.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 23:08:06] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +914427417000
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Suite Reservation Confirmed for B Kapil Varun M Babu!
+Ref Code: AUR-RM-10072308-94AB
+Suite: The Presidential Sky Penthouse (1 Nights)
+Dates: 2026-10-07 to 2026-10-08
+Total: $850.00
+Live Concierge Tracking: http://127.0.0.1:5000/?track=AUR-RM-10072308-94AB
+Receipt sent to varun5406k@gmail.com. We look forward to your stay!
+============================================================
+
+============================================================
+[2026-10-07 23:08:06] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - Reservation Receipt [AUR-RM-10072308-6B57]
+CONTENT:
+Delivered to varun5406k@gmail.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 23:08:06] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +914427417000
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Suite Reservation Confirmed for B Kapil Varun M Babu!
+Ref Code: AUR-RM-10072308-6B57
+Suite: The Presidential Sky Penthouse (1 Nights)
+Dates: 2026-10-07 to 2026-10-08
+Total: $850.00
+Live Concierge Tracking: http://127.0.0.1:5000/?track=AUR-RM-10072308-6B57
+Receipt sent to varun5406k@gmail.com. We look forward to your stay!
+============================================================
+
+============================================================
+[2026-10-07 23:08:06] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - Reservation Receipt [AUR-RM-10072307-FA0C]
+CONTENT:
+Delivered to varun5406k@gmail.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 23:08:06] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +914427417000
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Suite Reservation Confirmed for B Kapil Varun M Babu!
+Ref Code: AUR-RM-10072307-FA0C
+Suite: The Presidential Sky Penthouse (1 Nights)
+Dates: 2026-10-07 to 2026-10-08
+Total: $850.00
+Live Concierge Tracking: http://127.0.0.1:5000/?track=AUR-RM-10072307-FA0C
+Receipt sent to varun5406k@gmail.com. We look forward to your stay!
+============================================================
+
+============================================================
+[2026-10-07 23:08:08] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: varun5406k@gmail.com
+SUBJECT / TITLE: Aurora Grand - Reservation Receipt [AUR-RM-10072308-599B]
+CONTENT:
+Delivered to varun5406k@gmail.com via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 23:08:08] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +914427417000
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+AURORA GRAND: Suite Reservation Confirmed for B Kapil Varun M Babu!
+Ref Code: AUR-RM-10072308-599B
+Suite: The Presidential Sky Penthouse (1 Nights)
+Dates: 2026-10-07 to 2026-10-08
+Total: $850.00
+Live Concierge Tracking: http://127.0.0.1:5000/?track=AUR-RM-10072308-599B
+Receipt sent to varun5406k@gmail.com. We look forward to your stay!
+============================================================
+
+============================================================
+[2026-10-07 23:43:53] TYPE: EMAIL | STATUS: DELIVERED_ONLINE
+RECIPIENT: ronald@sterling.co.uk
+SUBJECT / TITLE: The SRM Grand - Reservation Receipt [AUR-RM-10072343-02EE]
+CONTENT:
+Delivered to ronald@sterling.co.uk via smtp.gmail.com
+============================================================
+
+============================================================
+[2026-10-07 23:43:53] TYPE: SMS | STATUS: LOGGED_IN_OUTBOX
+RECIPIENT: +44 7700 900888
+SUBJECT / TITLE: Reservation SMS Alert
+CONTENT:
+THE SRM GRAND: Suite Reservation Confirmed for Sir Ronald Sterling!
+Ref Code: AUR-RM-10072343-02EE
+Suite: The Presidential Sky Penthouse (4 Nights)
+Dates: 2026-12-24 to 2026-12-28
+Total: $3400.00
+Live Concierge Tracking: http://127.0.0.1:5000/?track=AUR-RM-10072343-02EE
+Receipt sent to ronald@sterling.co.uk. We look forward to your stay!
+============================================================

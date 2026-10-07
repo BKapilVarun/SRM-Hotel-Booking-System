@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE SRM GRAND | Luxury Hotel & Haute Cuisine</title>
+    <meta name="description" content="Experience unparalleled luxury room reservations and Michelin-calibre culinary dining in one seamless interface at The SRM Grand.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- Ambient Luxury Background Glow -->
+    <div class="ambient-glow glow-top"></div>
+    <div class="ambient-glow glow-bottom"></div>
+
+    <!-- Navigation Header -->
+    <header class="luxury-navbar" id="mainHeader">
+        <div class="nav-container">
+            <div class="brand-logo" id="brandLogo" onclick="switchTab('rooms-section')">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="brand-title">THE SRM GRAND</span>
+                    <span class="brand-subtitle">PALACE SUITES & HAUTE CUISINE</span>
+                </div>
+            </div>
+
+            <!-- Tab Switcher for Unified Interface -->
+            <nav class="nav-tabs" id="mainNavTabs" role="tablist">
+                <button class="nav-tab-btn active" data-tab="rooms-section" id="tabRooms">
+                    <i class="fa-solid fa-hotel"></i>
+                    <span>Suites & Villas</span>
+                </button>
+                <button class="nav-tab-btn" data-tab="dining-section" id="tabDining">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>Gourmet Dining</span>
+                </button>
+                <button class="nav-tab-btn highlight-btn" data-tab="unified-section" id="tabUnified">
+                    <i class="fa-solid fa-sparkles"></i>
+                    <span>Stay & Dine (2-in-1)</span>
+                </button>
+                <button class="nav-tab-btn" data-tab="reviews-section" id="tabReviews">
+                    <i class="fa-solid fa-star"></i>
+                    <span>Guest Reviews</span>
+                </button>
+                <button class="nav-tab-btn" data-tab="tracking-section" id="tabTracking">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                    <span>Live Tracker</span>
+                </button>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Cart / Dining Basket Trigger -->
+                <button class="cart-trigger-btn" id="openCartBtn" title="View Dining Basket">
+                    <i class="fa-solid fa-bell-concierge"></i>
+                    <span class="cart-label">Dining Tray</span>
+                    <span class="cart-badge" id="cartBadgeCount">0</span>
+                </button>
+
+                <!-- Private Storage Indicator -->
+                <a href="/owner" class="privacy-pill" title="Owner Management Portal (Authentication Required)" style="text-decoration: none;">
+                    <i class="fa-solid fa-lock"></i>
+                    <span>Owner Portal</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="heroSection">
+        <div class="hero-backdrop"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fa-solid fa-star"></i> 5-STAR ULTRA-LUXURY RESORT & RESTAURANT
+            </div>
+            <h1 class="hero-title">
+                Where Opulent Living Meets <br>
+                <span class="gold-gradient-text">Michelin-Inspired Gastronomy</span>
+            </h1>
+            <p class="hero-description">
+                Book world-class oceanfront suites and order exquisite culinary creations seamlessly in one unified interface.
+                Your receipt will be dispatched directly to your email and SMS.
+            </p>
+
+            <div class="hero-cta-group">
+                <button class="gold-button" onclick="switchTab('rooms-section')">
+                    <i class="fa-solid fa-calendar-check"></i> Book A Suite
+                </button>
+                <button class="glass-button" onclick="switchTab('dining-section')">
+                    <i class="fa-solid fa-wine-glass"></i> Explore Menu
+                </button>
+                <button class="gold-outline-button" onclick="switchTab('unified-section')">
+                    <i class="fa-solid fa-gem"></i> Combined 2-in-1 Pass
+                </button>
+            </div>
+
+            <!-- Fast Highlight Stats -->
+            <div class="hero-perks">
+                <div class="perk-item">
+                    <i class="fa-solid fa-key"></i>
+                    <div>
+                        <strong>Private Suites</strong>
+                        <small>Oceanfront & Infinity Pools</small>
+                    </div>
+                </div>
+                <div class="perk-divider"></div>
+                <div class="perk-item">
+                    <i class="fa-solid fa-envelope-circle-check"></i>
+                    <div>
+                        <strong>Instant Receipts</strong>
+                        <small>Automated Email & SMS</small>
+                    </div>
+                </div>
+                <div class="perk-divider"></div>
+                <div class="perk-item">
+                    <i class="fa-solid fa-file-excel"></i>
+                    <div>
+                        <strong>Dual Excel Storage</strong>
+                        <small>hotel_bookings & food_orders</small>
+                    </div>
+                </div>
+                <div class="perk-divider"></div>
+                <div class="perk-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <div>
+                        <strong>Owner Auth Only</strong>
+                        <small>Data Protected from Viewers</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="main-wrapper">
+
+        <!-- ========================================== -->
+        <!-- SECTION 1: HOTEL ROOM BOOKING INTERFACE     -->
+        <!-- ========================================== -->
+        <section class="tab-content-panel active" id="rooms-section">
+            <div class="section-header">
+                <div class="section-tag"><i class="fa-solid fa-bed"></i> ACCOMMODATION</div>
+                <h2 class="section-title">Palatial Suites & Sanctuary Villas</h2>
+                <p class="section-subtitle">
+                    Immerse yourself in unrivaled comfort. Select your luxury residence and reserve your stay.
+                </p>
+            </div>
+
+            <!-- Quick Room Filter -->
+            <div class="category-filter-bar" id="roomFilterBar">
+                <button class="filter-pill active" data-filter="all">All Suites</button>
+                <button class="filter-pill" data-filter="Penthouse">Penthouses</button>
+                <button class="filter-pill" data-filter="Private Villa">Private Villas</button>
+                <button class="filter-pill" data-filter="Royal Suite">Royal Suites</button>
+                <button class="filter-pill" data-filter="Executive">Executive</button>
+            </div>
+
+            <!-- Room Grid -->
+            <div class="room-grid" id="roomGridContainer">
+                <!-- Dynamically Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECTION 2: FOOD & DINING BOOKING INTERFACE -->
+        <!-- ========================================== -->
+        <section class="tab-content-panel" id="dining-section">
+            <div class="section-header">
+                <div class="section-tag"><i class="fa-solid fa-champagne-glasses"></i> HAUTE CUISINE</div>
+                <h2 class="section-title">In-Room Dining & Restaurant Reservations</h2>
+                <p class="section-subtitle">
+                    Savor masterfully crafted creations delivered to your suite or reserved at our oceanfront dining room.
+                </p>
+            </div>
+
+            <!-- Food Category Filters -->
+            <div class="category-filter-bar" id="foodFilterBar">
+                <button class="filter-pill active" data-food-filter="all">Full Tasting Menu</button>
+                <button class="filter-pill" data-food-filter="breakfast">Morning Delicacies</button>
+                <button class="filter-pill" data-food-filter="mains">Signature Mains</button>
+                <button class="filter-pill" data-food-filter="desserts">Sweet Confections</button>
+                <button class="filter-pill" data-food-filter="drinks">Cellar & Elixirs</button>
+            </div>
+
+            <!-- Food Menu Grid -->
+            <div class="food-grid" id="foodGridContainer">
+                <!-- Dynamically Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECTION 3: UNIFIED 2-IN-1 BOOKING HUB      -->
+        <!-- ========================================== -->
+        <section class="tab-content-panel" id="unified-section">
+            <div class="section-header">
+                <div class="section-tag"><i class="fa-solid fa-crown"></i> 2-IN-1 EXPERIENCE</div>
+                <h2 class="section-title">The Imperial Stay & Dine Pass</h2>
+                <p class="section-subtitle">
+                    Book your luxury suite and curate your gourmet in-room dining package simultaneously in one unified checkout.
+                </p>
+            </div>
+
+            <div class="unified-card">
+                <div class="unified-grid">
+                    <!-- Left Column: Hotel Room Selection -->
+                    <div class="unified-col">
+                        <div class="col-head">
+                            <span class="step-num">01</span>
+                            <div>
+                                <h3>Select Your Suite</h3>
+                                <p>Choose your sanctuary residence</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-door-open"></i> Suite / Residence</label>
+                            <select id="uRoomSelect" class="luxury-input">
+                                <option value="presidential-penthouse">The Presidential Sky Penthouse ($850 / night)</option>
+                                <option value="emerald-pool-villa" selected>Emerald Oceanfront Pool Villa ($620 / night)</option>
+                                <option value="royal-imperial-suite">Royal Imperial Sunset Suite ($450 / night)</option>
+                                <option value="executive-grand-suite">Executive Azure Horizon Suite ($320 / night)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fa-regular fa-calendar-days"></i> Check-in Date</label>
+                                <input type="date" id="uCheckIn" class="luxury-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fa-regular fa-calendar-check"></i> Check-out Date</label>
+                                <input type="date" id="uCheckOut" class="luxury-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-users"></i> Guests</label>
+                                <select id="uGuests" class="luxury-input">
+                                    <option value="1">1 Guest</option>
+                                    <option value="2" selected>2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fa-solid fa-moon"></i> Nights</label>
+                                <input type="text" id="uNightsDisplay" class="luxury-input readonly" value="1 Night" readonly>
+                            </div>
+                        </div>
+
+                        <div class="room-preview-box" id="uRoomPreviewBox">
+                            <img src="/static/images/suite_villa.jpg" id="uRoomPreviewImg" alt="Room Preview">
+                            <div class="room-preview-info">
+                                <h4 id="uRoomPreviewTitle">Emerald Oceanfront Pool Villa</h4>
+                                <p id="uRoomPreviewCost">$620 / night • Private Plunge Pool & Beach Walkway</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Culinary Course Selection -->
+                    <div class="unified-col">
+                        <div class="col-head">
+                            <span class="step-num">02</span>
+                            <div>
+                                <h3>Curate Culinary Dining</h3>
+                                <p>Select your welcome dishes and champagne</p>
+                            </div>
+                        </div>
+
+                        <div class="unified-menu-picker" id="unifiedMenuPicker">
+                            <!-- Populated with checkboxes for rapid selection -->
+                        </div>
+
+                        <div class="form-group" style="margin-top: 1rem;">
+                            <label><i class="fa-solid fa-clock"></i> Preferred Serving Time</label>
+                            <select id="uDiningTime" class="luxury-input">
+                                <option value="Upon Check-in Arrival">Upon Check-in Arrival</option>
+                                <option value="Evening Sunset (7:30 PM)">Evening Sunset (7:30 PM)</option>
+                                <option value="Late Night Service (10:00 PM)">Late Night Service (10:00 PM)</option>
+                                <option value="Next Morning Sunrise Breakfast (8:30 AM)">Next Morning Sunrise Breakfast (8:30 AM)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-comment-dots"></i> Chef / Dietary Notes</label>
+                            <input type="text" id="uDietaryNotes" class="luxury-input" placeholder="e.g. Gluten-free, no peanuts, celebrate anniversary">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Guest Info & Confirmation -->
+                <div class="unified-checkout-strip">
+                    <div class="col-head" style="margin-bottom: 1.25rem;">
+                        <span class="step-num">03</span>
+                        <div>
+                            <h3>Guest Information & Receipt Delivery</h3>
+                            <p>Receipt sent to your Email & SMS. Records logged privately to property databases.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-row-3">
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-user"></i> Primary Guest Full Name</label>
+                            <input type="text" id="uGuestName" class="luxury-input" placeholder="Lord / Lady / Dr. Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-envelope"></i> Email Address (for Receipt)</label>
+                            <input type="email" id="uGuestEmail" class="luxury-input" placeholder="guest@residence.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-phone"></i> Mobile Phone (for SMS)</label>
+                            <input type="tel" id="uGuestPhone" class="luxury-input" placeholder="+1 (555) 000-0000" required>
+                        </div>
+                    </div>
+
+                    <div class="unified-summary-bar">
+                        <div class="summary-breakdown">
+                            <div class="summary-item">
+                                <span>Room Accommodation:</span>
+                                <strong id="uSummaryRoomCost">$620.00</strong>
+                            </div>
+                            <div class="summary-plus">+</div>
+                            <div class="summary-item">
+                                <span>Culinary Dining Experience:</span>
+                                <strong id="uSummaryFoodCost">$0.00</strong>
+                            </div>
+                            <div class="summary-equals">=</div>
+                            <div class="summary-item highlight">
+                                <span>Combined Total:</span>
+                                <strong id="uSummaryGrandTotal" class="gold-gradient-text">$620.00</strong>
+                            </div>
+                        </div>
+
+                        <button class="gold-button lg-btn" id="submitUnifiedBtn" onclick="submitUnifiedBooking()">
+                            <i class="fa-solid fa-sparkles"></i> Confirm Stay & Dine Experience
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECTION 4: CUSTOMER REVIEWS & TESTIMONIALS -->
+        <!-- ========================================== -->
+        <section class="tab-content-panel" id="reviews-section">
+            <div class="section-header">
+                <div class="section-tag"><i class="fa-solid fa-star"></i> TESTIMONIALS</div>
+                <h2 class="section-title">Distinguished Guest Impressions</h2>
+                <p class="section-subtitle">
+                    Read genuine feedback from guests who have experienced our palatial suites and culinary gastronomy.
+                </p>
+                <div style="margin-top: 1.5rem;">
+                    <button class="gold-button" onclick="openReviewModal()">
+                        <i class="fa-solid fa-pen-fancy"></i> Share Your Experience
+                    </button>
+                </div>
+            </div>
+
+            <!-- Reviews Grid Container -->
+            <div class="reviews-grid" id="reviewsGridContainer">
+                <!-- Dynamically Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECTION 5: LIVE ORDER & SUITE TRACKING      -->
+        <!-- ========================================== -->
+        <section class="tab-content-panel" id="tracking-section">
+            <div class="section-header">
+                <div class="section-tag"><i class="fa-solid fa-satellite-dish"></i> REAL-TIME CONCIERGE TRACKING</div>
+                <h2 class="section-title">Live Reservation & Order Tracking</h2>
+                <p class="section-subtitle">
+                    Enter your confidential booking reference code below to track suite preparation, housekeeping status, VIP butler allocation, or culinary masterwork delivery in real-time.
+                </p>
+            </div>
+
+            <!-- Search Card -->
+            <div class="tracker-search-card">
+                <div class="tracker-search-inner">
+                    <form class="tracker-input-group" onsubmit="event.preventDefault(); executeTrackingSearch();">
+                        <i class="fa-solid fa-magnifying-glass tracker-search-icon"></i>
+                        <input type="text" id="trackerInput" class="tracker-search-input" placeholder="Enter Reference Code (e.g. AUR-RM-1007-XXXX or AUR-FD-1007-XXXX)" autocomplete="off">
+                        <button type="submit" class="gold-button tracker-search-btn" id="btnTrackSubmit">
+                            <i class="fa-solid fa-location-crosshairs"></i>
+                            <span>Track Live</span>
+                        </button>
+                    </form>
+                    <div class="tracker-hints">
+                        <span class="hint-label"><i class="fa-solid fa-shield-halved"></i> Direct Reference:</span>
+                        <span class="hint-text">Found on your Booking Voucher, Email Receipt & SMS Alert.</span>
+                        <div id="recentTrackingPills" class="recent-pills"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tracking Result / Timeline Area -->
+            <div class="tracker-result-area" id="trackerResultArea">
+                <div class="tracker-empty-state" id="trackerInitialState">
+                    <div class="empty-icon-wrap">
+                        <i class="fa-solid fa-compass-drafting"></i>
+                    </div>
+                    <h3>Ready to Track Your Experience</h3>
+                    <p>Enter your 16-character confirmation reference from your email receipt or reservation voucher to monitor live preparation milestones.</p>
+                </div>
+
+                <!-- Dynamic Content Container -->
+                <div class="tracker-details-card" id="trackerActiveCard" style="display: none;">
+                    <!-- Injected dynamically via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- MODAL: DEDICATED ROOM BOOKING DIALOG       -->
+    <!-- ========================================== -->
+    <div class="modal-backdrop" id="roomBookingModal">
+        <div class="modal-dialog">
+            <button class="modal-close-btn" onclick="closeRoomModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fa-solid fa-hotel"></i></div>
+                <div>
+                    <h3 id="modalRoomTitle">Reserve Luxury Suite</h3>
+                    <p id="modalRoomSubtitle">The SRM Grand Concierge</p>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-room-hero">
+                    <img id="modalRoomImage" src="" alt="Suite preview">
+                    <div class="modal-room-details">
+                        <div class="rate-badge"><span id="modalRoomPrice">$0</span> / night</div>
+                        <div class="specs-pills" id="modalRoomSpecs"></div>
+                    </div>
+                </div>
+
+                <form id="roomBookingForm" onsubmit="handleRoomBookingSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fa-regular fa-calendar-days"></i> Check-in Date</label>
+                            <input type="date" id="mCheckIn" class="luxury-input" required onchange="calculateRoomModalPrice()">
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-regular fa-calendar-check"></i> Check-out Date</label>
+                            <input type="date" id="mCheckOut" class="luxury-input" required onchange="calculateRoomModalPrice()">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-users"></i> Guests Count</label>
+                            <select id="mGuests" class="luxury-input">
+                                <option value="1">1 Guest</option>
+                                <option value="2" selected>2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-credit-card"></i> Payment Preference</label>
+                            <select id="mPayment" class="luxury-input">
+                                <option value="Upon Check-in Arrival">Upon Check-in Arrival (Cash/Card)</option>
+                                <option value="Pre-authorized Platinum Card">Pre-authorized Platinum Card</option>
+                                <option value="Corporate Concierge Account">Corporate Concierge Account</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-user"></i> Guest Full Name</label>
+                            <input type="text" id="mGuestName" class="luxury-input" placeholder="e.g. Alexander Vance" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-envelope"></i> Email (for Official Receipt)</label>
+                            <input type="email" id="mGuestEmail" class="luxury-input" placeholder="alexander@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-phone"></i> Mobile Phone (for SMS Alert)</label>
+                            <input type="tel" id="mGuestPhone" class="luxury-input" placeholder="+1 (555) 345-6789" required>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-bell"></i> Special Concierge Requests</label>
+                            <input type="text" id="mSpecialRequests" class="luxury-input" placeholder="Airport transfer, extra goose-down pillows, etc.">
+                        </div>
+                    </div>
+
+                    <div class="modal-pricing-summary">
+                        <div class="calc-row">
+                            <span>Calculated Duration:</span>
+                            <strong id="mCalculatedNights">1 Night</strong>
+                        </div>
+                        <div class="calc-row total-highlight">
+                            <span>Total Accommodation Charge:</span>
+                            <strong id="mCalculatedTotal" class="gold-gradient-text">$0.00</strong>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="glass-button" onclick="closeRoomModal()">Cancel</button>
+                        <button type="submit" class="gold-button">
+                            <i class="fa-solid fa-check-circle"></i> Confirm Room Reservation
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- DRAWER: FOOD CART & DINING CHECKOUT        -->
+    <!-- ========================================== -->
+    <div class="cart-drawer-backdrop" id="cartDrawerBackdrop" onclick="closeCartDrawer()"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="drawer-header">
+            <div class="drawer-title">
+                <i class="fa-solid fa-bell-concierge"></i>
+                <h3>Gourmet Dining Tray</h3>
+            </div>
+            <button class="drawer-close-btn" onclick="closeCartDrawer()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="drawer-content">
+            <div class="cart-items-list" id="cartItemsContainer">
+                <!-- Cart items rendered by JavaScript -->
+            </div>
+
+            <!-- Empty Cart Notice -->
+            <div class="empty-cart-state" id="emptyCartState">
+                <i class="fa-solid fa-plate-wheat"></i>
+                <h4>Your Dining Tray is Empty</h4>
+                <p>Browse our Haute Cuisine menu and add delectable creations to your order.</p>
+                <button class="gold-outline-button" onclick="closeCartDrawer(); switchTab('dining-section');">
+                    Browse Menu
+                </button>
+            </div>
+
+            <!-- Order Fulfillment Form (shown when cart has items) -->
+            <form class="order-fulfillment-form" id="orderFulfillmentForm" onsubmit="handleFoodOrderSubmit(event)">
+                <h4 class="form-subheading"><i class="fa-solid fa-location-dot"></i> Service Details</h4>
+
+                <div class="service-type-toggle">
+                    <label class="toggle-option active">
+                        <input type="radio" name="serviceType" value="Room Service" checked onchange="toggleServiceType(this.value)">
+                        <span><i class="fa-solid fa-door-closed"></i> In-Room Dining</span>
+                    </label>
+                    <label class="toggle-option">
+                        <input type="radio" name="serviceType" value="Restaurant Table" onchange="toggleServiceType(this.value)">
+                        <span><i class="fa-solid fa-utensils"></i> Restaurant Table</span>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label id="destLabel"><i class="fa-solid fa-hashtag"></i> Suite / Room Number</label>
+                    <input type="text" id="foodDestNumber" class="luxury-input" placeholder="e.g. Suite 402 or Villa 07" required>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-regular fa-clock"></i> Desired Serving Time</label>
+                    <select id="foodServingTime" class="luxury-input">
+                        <option value="As Soon As Possible (approx. 25-35 mins)">As Soon As Possible (~25-35 mins)</option>
+                        <option value="Evening Sunset (7:00 PM - 8:00 PM)">Evening Sunset (7:00 PM - 8:00 PM)</option>
+                        <option value="Late Night (9:30 PM - 11:00 PM)">Late Night (9:30 PM - 11:00 PM)</option>
+                        <option value="Morning Breakfast (8:00 AM - 9:30 AM)">Morning Breakfast (8:00 AM - 9:30 AM)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-user"></i> Guest / Contact Name</label>
+                    <input type="text" id="foodCustomerName" class="luxury-input" placeholder="e.g. Lady Clara Morgan" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-phone"></i> Phone (for SMS Alert)</label>
+                        <input type="tel" id="foodCustomerPhone" class="luxury-input" placeholder="+1 (555) 789-0123" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-envelope"></i> Email (for Receipt)</label>
+                        <input type="email" id="foodCustomerEmail" class="luxury-input" placeholder="clara@residence.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-wheat-awn-circle-exclamation"></i> Dietary / Chef Notes</label>
+                    <input type="text" id="foodDietaryNotes" class="luxury-input" placeholder="e.g. Dressing on side, dairy-free dessert">
+                </div>
+
+                <div class="drawer-totals-card">
+                    <div class="totals-row">
+                        <span>Dishes Subtotal:</span>
+                        <span id="drawerSubtotal">$0.00</span>
+                    </div>
+                    <div class="totals-row">
+                        <span>Service & Hospitality (10%):</span>
+                        <span id="drawerTax">$0.00</span>
+                    </div>
+                    <div class="totals-row grand-total">
+                        <span>Grand Total:</span>
+                        <span id="drawerGrandTotal" class="gold-gradient-text">$0.00</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="gold-button full-width" id="placeFoodOrderBtn">
+                    <i class="fa-solid fa-paper-plane"></i> Place Culinary Order
+                </button>
+            </form>
+        </div>
+    </aside>
+
+    <!-- ========================================== -->
+    <!-- MODAL: WRITE A CUSTOMER REVIEW             -->
+    <!-- ========================================== -->
+    <div class="modal-backdrop" id="reviewModal">
+        <div class="modal-dialog" style="max-width: 550px;">
+            <button class="modal-close-btn" onclick="closeReviewModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-header">
+                <div class="modal-icon"><i class="fa-solid fa-star"></i></div>
+                <div>
+                    <h3>Write a Guest Review</h3>
+                    <p>Share your stay or dining experience with future guests</p>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <form id="reviewForm" onsubmit="handleReviewSubmit(event)">
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-user"></i> Your Name / Title</label>
+                        <input type="text" id="revGuestName" class="luxury-input" placeholder="e.g. Lady Catherine Sterling" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-star"></i> Rating</label>
+                            <select id="revRating" class="luxury-input">
+                                <option value="5" selected>⭐⭐⭐⭐⭐ (5 Stars - Exceptional)</option>
+                                <option value="4">⭐⭐⭐⭐ (4 Stars - Very Good)</option>
+                                <option value="3">⭐⭐⭐ (3 Stars - Average)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fa-solid fa-tag"></i> Experience Type</label>
+                            <select id="revType" class="luxury-input">
+                                <option value="Suite Stay & Dining">Suite Stay & Dining</option>
+                                <option value="Villa Sanctuary">Villa Sanctuary</option>
+                                <option value="Haute Cuisine Dining">Haute Cuisine Dining</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-heading"></i> Review Headline</label>
+                        <input type="text" id="revTitle" class="luxury-input" placeholder="e.g. Unmatched elegance and culinary perfection" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-comment-quote"></i> Your Comments</label>
+                        <textarea id="revComment" class="luxury-input" rows="4" placeholder="Describe the ambiance, butler service, or signature dishes..." required></textarea>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="glass-button" onclick="closeReviewModal()">Cancel</button>
+                        <button type="submit" class="gold-button">
+                            <i class="fa-solid fa-paper-plane"></i> Submit Review
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODAL: LUXURY CONFIRMATION CERTIFICATE     -->
+    <!-- ========================================== -->
+    <div class="modal-backdrop" id="confirmationModal">
+        <div class="modal-dialog confirmation-dialog">
+            <button class="modal-close-btn" onclick="closeConfirmationModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="certificate-card" id="certificateVoucher">
+                <div class="cert-watermark"><i class="fa-solid fa-crown"></i></div>
+                
+                <div class="cert-header">
+                    <div class="cert-seal">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <div class="cert-hotel-title">
+                        <h2>THE SRM GRAND RESORT & RESIDENCES</h2>
+                        <p>OFFICIAL RESERVATION CONFIRMATION VOUCHER</p>
+                    </div>
+                    <div class="cert-status-badge">
+                        <i class="fa-solid fa-circle-check"></i> CONFIRMED
+                    </div>
+                </div>
+
+                <div class="cert-divider"></div>
+
+                <div class="cert-body" id="certBodyContent">
+                    <!-- Dynamic reservation details populated here -->
+                </div>
+
+                <!-- Dispatched Notification Badges -->
+                <div class="dispatch-alert-box" id="certDispatchBox">
+                    <!-- Populated dynamically with Email and SMS status -->
+                </div>
+
+                <div class="cert-privacy-notice">
+                    <i class="fa-solid fa-lock"></i>
+                    <span>
+                        <strong>Confidentiality Guarantee:</strong> Your reservation data has been stored directly in our secure management spreadsheets. Booking records are never exposed to public viewers and are accessible solely by property owners with authentication.
+                    </span>
+                </div>
+
+                <div class="cert-footer">
+                    <button class="gold-button" onclick="printOfficialReceipt()">
+                        <i class="fa-solid fa-print"></i> Print Official Receipt
+                    </button>
+                    <button class="gold-outline-button" id="certTrackLiveBtn" onclick="trackFromVoucher()">
+                        <i class="fa-solid fa-location-crosshairs"></i> Track Live Status &rarr;
+                    </button>
+                    <button class="glass-button" onclick="closeConfirmationModal()">
+                        <i class="fa-solid fa-check"></i> Done & Return
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Luxury Footer -->
+    <footer class="luxury-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="brand-logo" onclick="switchTab('rooms-section')">
+                    <div class="logo-icon"><i class="fa-solid fa-crown"></i></div>
+                    <div class="logo-text">
+                        <span class="brand-title">THE SRM GRAND</span>
+                        <span class="brand-subtitle">THE PINNACLE OF HOSPITALITY</span>
+                    </div>
+                </div>
+                <p class="footer-tagline">
+                    Exquisite oceanfront suites and Michelin-inspired culinary masterworks combined in one unified experience.
+                </p>
+            </div>
+
+            <div class="footer-storage-info">
+                <h4><i class="fa-solid fa-database"></i> Private Excel Architecture</h4>
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-file-excel"></i>
+                        <span>Room Database: <code>hotel_bookings.xlsx</code></span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-file-excel"></i>
+                        <span>Food Database: <code>food_orders.xlsx</code></span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope-circle-check"></i>
+                        <span>Receipt Delivery: Direct to Email & SMS</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-user-lock"></i>
+                        <span>Viewer Privacy: Zero public visibility of customer data</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-manager-links">
+                <h4><i class="fa-solid fa-shield-halved"></i> Owner Access Control</h4>
+                <p>Booking records and database ledgers are protected and visible solely to authenticated property owners.</p>
+                <div class="admin-buttons">
+                    <a href="/owner" class="admin-download-btn" title="Owner Management Portal">
+                        <i class="fa-solid fa-key" style="color: #d4af37;"></i> Open Owner Portal (Login Required)
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 THE SRM GRAND RESORT & RESTAURANTS. ALL RECORDS ARCHIVED PRIVATELY.</p>
+        </div>
+    </footer>
+
+    <!-- Application Logic -->
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
