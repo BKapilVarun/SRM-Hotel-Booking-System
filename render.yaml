@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: the-srm-grand
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: SUPABASE_URL
+        value: https://vagksbyhfwpqlafndymk.supabase.co
+      - key: OWNER_PASSWORD
+        value: srm2026
